@@ -1,5 +1,8 @@
 module lecture1 where 
 
+open import Data.Empty using (⊥)
+open import Function using (id)
+
 data _+_ (A : Set) (B : Set) : Set where 
   left : A -> A + B
   right : B -> A + B
@@ -23,5 +26,8 @@ fold-+ _ g (right x) = right (g x)
 combinatorK : {A E : Set} -> A -> E -> A
 combinatorK = λ a _ -> a 
 
-combinatorS : { S T E : Set} -> (E -> S -> T) -> (E -> S) -> E -> T 
+combinatorS : { A B E : Set} -> (E -> A -> B) -> (E -> A) -> E -> B
 combinatorS = λ f g e -> f e (g e)
+
+id-KS : {A : Set} -> A -> A
+id-KS = combinatorS combinatorK (combinatorK  {_} {⊥} )
