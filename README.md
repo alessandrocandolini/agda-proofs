@@ -1,3 +1,5 @@
+[![CI](https://github.com/alessandrocandolini/agda-proofs/actions/workflows/ci.yml/badge.svg)](https://github.com/alessandrocandolini/agda-proofs/actions/workflows/ci.yml)
+
 # agda-proofs
 
 ## Compile
