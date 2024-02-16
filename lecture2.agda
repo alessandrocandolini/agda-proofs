@@ -13,6 +13,9 @@ zero + b = b
 next a + b = next (a + b)
 
 four : ℕ
-four = 2 + 2 
+four = 2 + 2
+
+four-is-4 : four = 4 
+four-is-4 = refl
 
 

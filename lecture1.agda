@@ -23,6 +23,11 @@ fold-+ : {A A' B B' : Set} -> (A -> A') -> (B -> B') -> A + B -> A' + B'
 fold-+ f _ (left x) = left (f x)
 fold-+ _ g (right x) = right (g x)
 
+fold : {A B C : Set} -> (A -> C) -> (B -> C) -> A + B -> C 
+fold f g (left x) = f x
+fold f g (right x) = g x
+
+
 combinatorK : {A E : Set} -> A -> E -> A
 combinatorK = λ a _ -> a 
 
